@@ -3,8 +3,9 @@ import mysql.connector
 mydb = mysql.connector.connect(
      host = 'sql6.freemysqlhosting.net',
      user = 'sql6481182',
-     password = 'xxxxxxxxx' ,
+     password = 'xxxxxxxxx',
      database = 'sql6481182')
+
 
 mycursor = mydb.cursor()
 
@@ -31,19 +32,19 @@ for movie in mycursor:
    print(movie)
 
 #query by vote count
-mycursor.execute('SELECT * FROM movie where vote > 10000')
+mycursor.execute('SELECT * FROM movie where votes > 10000')
 
 for movie in mycursor:
    print(movie)
 
 #query by director
 mycursor.execute("SELECT * FROM movie where director = 'Shavn Levy'")
-mydb.commit()
+
 for movie in mycursor:
    print(movie)
 
 #query by stars
-mycursor.execute("SELECT * FROM movie where star = 'Alexander")
+mycursor.execute("SELECT * FROM movie where star = 'Alexander'")
 for movie in mycursor:
    print(movie)
 
